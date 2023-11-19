@@ -45,8 +45,29 @@ Puedes instalar los requerimientos así:
 ```
 pip install -r requirements.txt
 ```
-**Paso 2 - Descargar el Conjunto de Datos BraTS2020 / Descripciones de Imágenes / Exploración de Datos**
-Descargaremos el conjunto de datos BraTS2020, exploraremos sus características y descripciones de imágenes para comprender mejor la información con la que estamos trabajando.
+**Paso 2 - Descargar el Conjunto de Datos / Exploración de Datos**
+
+Para este tutorial descargaremos el conjunto de datos BraTS2020, proporcionado por los organizadores del desafío BraTS 2020 y contienen exploraciones de resonancia magnética multimodal preoperatorias clínicamente adquiridas de glioblastoma (GBM/HGG) y glioma de bajo grado (LGG), que incluyen (a) volúmenes nativos (T1) y (b) post-contraste ponderados en T1 (T1Gd), (c) ponderados en T2 (T2), y (d) recuperación de inversión atenuada por líquido (FLAIR) (más detalles en la última parte).
+
+Para descargar el conjunto de datos de entrenamiento:
+
+```
+!wget 'https://www.cbica.upenn.edu/MICCAI_BraTS2020_TrainingData'
+```
+Para descargar el conjunto de datos de validación:
+
+```
+!wget 'https://www.cbica.upenn.edu/MICCAI_BraTS2020_ValidationData'
+```
+
+**Preprocesamiento de MRI en la segmentación de tumores**
+
+En el análisis de la resonancia magnética estructural del cerebro, se llevan a cabo procedimientos específicos de preprocesamiento antes de la segmentación automatizada. Estos suelen incluir tareas como registro de imágenes, eliminación del cráneo y corrección del campo de sesgo.
+
+Si el conjunto de datos que va a utilizar no posee preprocesamiento, debe realizarlo previamente.
+
+**Exploración de datos**
+Se realiza una primera visualización de las imágenes y sus máscaras de segmentación, para identificar que si correspondan a la delimitación del tumor, así como para la detección de imagenes con componenetes artefactuales que dificulten el entrenamiento del modelo.
 
 **FIFI**
 
