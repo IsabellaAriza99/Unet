@@ -5,8 +5,6 @@ Bienvenido al tutorial de U-Net, donde exploraremos el proceso paso a paso para 
 ## **Instrucciones:**
 El tutorial se organiza en una serie de 7 pasos para realizar el proceso de segmentación de inicio a fin:
 
-**ISA**
-
 ## **Paso 0 - Definición del Problema**
 
 Segmentación de gliomas en imágenes de resonancia magnética preoperatorias.
@@ -30,27 +28,23 @@ Las etiquetas de segmentación proporcionadas tienen valores de 1 para NCR y NET
 
 ![Brats2020](https://www.med.upenn.edu/cbica/assets/user-content/images/BraTS/brats-tumor-subregions.jpg)
 
-**Paso 1 - Configurar el entorno de trabajo**
+## **Paso 1 - Configurar el entorno de trabajo**
 Prepararemos el entorno de trabajo para garantizar que todas las dependencias estén instaladas y listas para su uso.
 
 Las librerías utilizadas son:
 
 **Manipulación y visualización de imagenes**
 
-- skimage
-- matplotlib
-- numpy
-- pandas
-- seaborn
-- nilearn
-- nibabel
+- skimage, matplotlib, numpy, pandas, seaborn, nilearn, nibabel.
 
 **Desarrollo y evaluación del modelo de Deep Learning**
 
-- Keras
-- Tensorflow
+- Keras, Tensorflow.
 
-
+Puedes instalar los requerimientos así:
+```
+pip install -r requirements.txt
+```
 **Paso 2 - Descargar el Conjunto de Datos BraTS2020 / Descripciones de Imágenes / Exploración de Datos**
 Descargaremos el conjunto de datos BraTS2020, exploraremos sus características y descripciones de imágenes para comprender mejor la información con la que estamos trabajando.
 
