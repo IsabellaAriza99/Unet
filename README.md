@@ -4,7 +4,7 @@ Bienvenido al tutorial de U-Net, donde exploraremos el proceso paso a paso para 
 
 ## **Instrucciones:**
 El tutorial se organiza en una serie de 7 pasos para realizar el proceso de segmentación de inicio a fin:
-
+**ISA**
 ## **Paso 0 - Definición del Problema**
 
 Segmentación de gliomas en imágenes de resonancia magnética preoperatorias.
@@ -45,7 +45,7 @@ Puedes instalar los requerimientos así:
 ```
 pip install -r requirements.txt
 ```
-**Paso 2 - Descargar el Conjunto de Datos / Exploración de Datos**
+## **Paso 2 - Descargar el Conjunto de Datos / Exploración de Datos**
 
 Para este tutorial descargaremos el conjunto de datos BraTS2020, proporcionado por los organizadores del desafío BraTS 2020 y contienen exploraciones de resonancia magnética multimodal preoperatorias clínicamente adquiridas de glioblastoma (GBM/HGG) y glioma de bajo grado (LGG), que incluyen (a) volúmenes nativos (T1) y (b) post-contraste ponderados en T1 (T1Gd), (c) ponderados en T2 (T2), y (d) recuperación de inversión atenuada por líquido (FLAIR) (más detalles en la última parte).
 
@@ -67,29 +67,42 @@ En el análisis de la resonancia magnética estructural del cerebro, se llevan a
 Si el conjunto de datos que va a utilizar no posee preprocesamiento, debe realizarlo previamente.
 
 **Exploración de datos**
-Se realiza una primera visualización de las imágenes y sus máscaras de segmentación, para identificar que si correspondan a la delimitación del tumor, así como para la detección de imagenes con componenetes artefactuales que dificulten el entrenamiento del modelo.
+
+Se realiza una primera visualización de las imágenes y sus máscaras de segmentación, para identificar que si correspondan a la delimitación del tumor por medio de las librerías nilearn, nibabel, matplotlib, así como para la detección de imagenes con componenetes artefactuales que dificulten el entrenamiento del modelo.
 
 **FIFI**
 
-**Paso 3 - Crear el Modelo || U-Net**
-Implementaremos la arquitectura U-Net para la segmentación de tumores cerebrales y analizaremos sus parámetros y hiperparámetros.
+## **Paso 3 - Crear el Modelo || U-Net**
 
 **ISA**
 
-**Paso 4 - Preparar Datos para el Entrenamiento**
+## **Paso 4 - Preparar Datos para el Entrenamiento**
+
 Acondicionaremos los datos para que sean adecuados para el entrenamiento de la red neuronal.
 
+Dividiremos nuestro conjunto de datos en 
+
+Training - 68% 
+Test - 15%
+Validation - 17%
+
 **FIFI**
 
-**Paso 5 - Entrenar el Modelo**
-Realizaremos el proceso de entrenamiento de la red U-Net con el conjunto de datos preparado.
+## **Paso 5 - Entrenar el Modelo**
 
 **ISA**
 
-**Paso 6 - Predecir Segmentaciones de Tumores**
+## **Paso 6 - Predecir Segmentaciones de Tumores**
+
 Utilizaremos el modelo entrenado para realizar predicciones de segmentación en nuevas imágenes.
 
-**Paso 7 - Evaluar el Modelo**
-Evaluar el rendimiento del modelo en términos de precisión y eficacia en la tarea de segmentación de tumores cerebrales.
+En este caso usaremos las imagenes del conjunto de test y compararemos con la máscara de segmentación manual.
+
+La función utilizada es <predictByPath()>
+
+## **Paso 7 - Evaluar el Modelo**
+Evaluaremos el rendimiento del modelo en términos de precisión y eficacia en la tarea de segmentación de tumores cerebrales.
+
+Para eso utilizaremos la función <showPredictsById()>
 
 Siga cada paso detenidamente para obtener una comprensión completa del proceso y lograr una implementación exitosa de U-Net en la tarea de segmentación médica. 
