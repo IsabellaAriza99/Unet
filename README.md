@@ -1,4 +1,4 @@
-# Segemntación de tumores cerebrales con U-Net
+# Segementación de tumores cerebrales con U-Net
 
 <p align="justify">
 Bienvenido al tutorial de U-Net, donde exploraremos el proceso paso a paso para implementar y entrenar una red neuronal para la segmentación de tumores cerebrales en imágenes de resonancia magnética utilizando la arquitectura U-Net.
