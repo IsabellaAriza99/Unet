@@ -2,21 +2,33 @@
 
 Bienvenido al tutorial de U-Net, donde exploraremos el proceso paso a paso para implementar y entrenar una red neuronal para la segmentación de tumores cerebrales en imágenes de resonancia magnética utilizando la arquitectura U-Net.
 
-**Instrucciones:**
+## **Instrucciones:**
 El tutorial se organiza en una serie de 7 pasos para realizar el proceso de segmentación de inicio a fin:
 
 **ISA**
 
-**Paso 0 - Definición del Problema**
+## **Paso 0 - Definición del Problema**
 
 Segmentación de gliomas en imágenes de resonancia magnética preoperatorias.
 
-Cada píxel en la imagen debe ser asignado a una etiqueta:
+Los tumores cerebrales son crecimientos anómalos de tejido que pueden causar complicaciones de salud al ejercer presión en el cerebro. Estas complicaciones varían según la ubicación del tumor y pueden incluir resistencia a la terapia, problemas de suministro sanguíneo y efectos secundarios como edema e hipertensión intracraneal.
+
+Las técnicas de imagen, especialmente la resonancia magnética (MRI), son fundamentales para detectar tumores cerebrales. La segmentación manual en las imágenes es laboriosa y propensa a variabilidad entre evaluadores. Para abordar esto, se han desarrollado métodos automatizados, como el algoritmo U-Net, que pertenece a la familia de técnicas de aprendizaje profundo.
+
+En la segmentación de imágenes cada píxel en la imagen debe ser asignado a una etiqueta:
 
 Si el píxel forma parte de una zona tumoral (1, 2 o 3) -> puede pertenecer a una de varias clases / subregiones.
+
 De lo contrario -> el píxel no está en una región tumoral (0).
-Las subregiones del tumor consideradas para la evaluación son: 1) el "tumor realzado" (ET), 2) el "núcleo del tumor" (TC) y 3) el "tumor completo" (WT).
+
+Las subregiones del tumor consideradas para la evaluación son: 
+1) El "tumor realzado" (ET)
+2) El "núcleo del tumor" (TC)
+3) El "tumor completo" (WT)
+   
 Las etiquetas de segmentación proporcionadas tienen valores de 1 para NCR y NET, 2 para ED, 4 para ET y 0 para cualquier otra región.
+
+![Brats2020](https://www.med.upenn.edu/cbica/assets/user-content/images/BraTS/brats-tumor-subregions.jpg)
 
 **Paso 1 - Configurar el Entorno**
 Prepararemos el entorno de trabajo para garantizar que todas las dependencias estén instaladas y listas para su uso.
