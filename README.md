@@ -11,12 +11,19 @@ ISA
    -  Step 2 - Download the BraTS2020 dataset / Image Descriptions / Data exploration
     
 FIFI
-    - Step 3 - Create model || U-Net
-    - Step 3 bis - Understand the Unet (Parameters & Hyperparameters)
+
+   - Step 3 - Create model || U-Net
+   - Step 3 bis - Understand the Unet (Parameters & Hyperparameters)
+    
 ISA
-    - Step 4 - Prepare data for Training
+
+   - Step 4 - Prepare data for Training
+    
 FIFI
-    - Step 5 - Train the model
+
+   - Step 5 - Train the model
+    
 ISA
-    - Step 6 - Predict tumor segmentations
-    - Step 7 - Evaluate the model
+
+   - Step 6 - Predict tumor segmentations
+   - Step 7 - Evaluate the model
