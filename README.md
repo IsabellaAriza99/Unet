@@ -100,11 +100,11 @@ Utilizaremos el modelo entrenado para realizar predicciones de segmentación en 
 
 En este caso usaremos las imagenes del conjunto de test y compararemos con la máscara de segmentación manual.
 
-La función utilizada es <predictByPath()>
+La función utilizada es `predictByPath()`
 
 ## **Paso 7 - Evaluar el Modelo**
 Evaluaremos el rendimiento del modelo en términos de precisión y eficacia en la tarea de segmentación de tumores cerebrales.
 
-Para eso utilizaremos la función <showPredictsById()>
+Para eso utilizaremos la función `showPredictsById()`
 
 Siga cada paso detenidamente para obtener una comprensión completa del proceso y lograr una implementación exitosa de U-Net en la tarea de segmentación médica. 
