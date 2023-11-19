@@ -1,29 +1,50 @@
-# Unet
+# Tutorial segemntación de tumorea cerebrales con U-Net
 
-- TUTORIAL
+Bienvenido al tutorial de U-Net, donde exploraremos el proceso paso a paso para implementar y entrenar una red neuronal para la segmentación de tumores cerebrales en imágenes de resonancia magnética utilizando la arquitectura U-Net.
 
-Instructions :
+**Instrucciones:**
+El tutorial se organiza en una serie de 7 pasos para realizar el proceso de segmentación de inicio a fin:
 
-ISA
+**ISA**
 
-   -  Step 0 - Problem Definition / Context
-   -  Step 1 - Set up environment
-   -  Step 2 - Download the BraTS2020 dataset / Image Descriptions / Data exploration
-    
-FIFI
+**Paso 0 - Definición del Problema**
 
-   - Step 3 - Create model || U-Net
-   - Step 3 bis - Understand the Unet (Parameters & Hyperparameters)
-    
-ISA
+Segmentación de gliomas en imágenes de resonancia magnética preoperatorias.
 
-   - Step 4 - Prepare data for Training
-    
-FIFI
+Cada píxel en la imagen debe ser asignado a una etiqueta:
 
-   - Step 5 - Train the model
-    
-ISA
+Si el píxel forma parte de una zona tumoral (1, 2 o 3) -> puede pertenecer a una de varias clases / subregiones.
+De lo contrario -> el píxel no está en una región tumoral (0).
+Las subregiones del tumor consideradas para la evaluación son: 1) el "tumor realzado" (ET), 2) el "núcleo del tumor" (TC) y 3) el "tumor completo" (WT).
+Las etiquetas de segmentación proporcionadas tienen valores de 1 para NCR y NET, 2 para ED, 4 para ET y 0 para cualquier otra región.
 
-   - Step 6 - Predict tumor segmentations
-   - Step 7 - Evaluate the model
+**Paso 1 - Configurar el Entorno**
+Prepararemos el entorno de trabajo para garantizar que todas las dependencias estén instaladas y listas para su uso.
+
+**Paso 2 - Descargar el Conjunto de Datos BraTS2020 / Descripciones de Imágenes / Exploración de Datos**
+Descargaremos el conjunto de datos BraTS2020, exploraremos sus características y descripciones de imágenes para comprender mejor la información con la que estamos trabajando.
+
+**FIFI**
+
+**Paso 3 - Crear el Modelo || U-Net**
+Implementaremos la arquitectura U-Net para la segmentación de tumores cerebrales y analizaremos sus parámetros y hiperparámetros.
+
+**ISA**
+
+**Paso 4 - Preparar Datos para el Entrenamiento**
+Acondicionaremos los datos para que sean adecuados para el entrenamiento de la red neuronal.
+
+**FIFI**
+
+**Paso 5 - Entrenar el Modelo**
+Realizaremos el proceso de entrenamiento de la red U-Net con el conjunto de datos preparado.
+
+**ISA**
+
+**Paso 6 - Predecir Segmentaciones de Tumores**
+Utilizaremos el modelo entrenado para realizar predicciones de segmentación en nuevas imágenes.
+
+**Paso 7 - Evaluar el Modelo**
+Evaluar el rendimiento del modelo en términos de precisión y eficacia en la tarea de segmentación de tumores cerebrales.
+
+Siga cada paso detenidamente para obtener una comprensión completa del proceso y lograr una implementación exitosa de U-Net en la tarea de segmentación médica. 
