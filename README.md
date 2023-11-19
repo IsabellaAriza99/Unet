@@ -70,11 +70,7 @@ Si el conjunto de datos que va a utilizar no posee preprocesamiento, debe realiz
 
 Se realiza una primera visualización de las imágenes y sus máscaras de segmentación, para identificar que si correspondan a la delimitación del tumor por medio de las librerías nilearn, nibabel, matplotlib, así como para la detección de imagenes con componenetes artefactuales que dificulten el entrenamiento del modelo.
 
-**FIFI**
-
-## **Paso 3 - Crear el Modelo || U-Net**
-
-**ISA**
+## **Paso 3 - Crear el Modelo || U-Net** - **FIFI**
 
 ## **Paso 4 - Preparar Datos para el Entrenamiento**
 
@@ -86,11 +82,7 @@ Training - 68%
 Test - 15%
 Validation - 17%
 
-**FIFI**
-
-## **Paso 5 - Entrenar el Modelo**
-
-**ISA**
+## **Paso 5 - Entrenar el Modelo** - **FIFI**
 
 ## **Paso 6 - Predecir Segmentaciones de Tumores**
 
