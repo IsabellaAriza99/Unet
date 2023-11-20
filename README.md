@@ -87,8 +87,6 @@ En esta sección, vamos a construir y configurar el modelo U-Net para la segment
 
 **A - Definición del Modelo**
 
-![Alt text](<unet_model.png>)
-
 El modelo U-Net se caracteriza por su arquitectura simétrica, que incluye un camino de contracción (codificador) y un camino de expansión (decodificador), permitiendo una segmentación precisa a nivel de píxel. La conexión de salto entre el codificador y el decodificador ayuda a recuperar la información espacial perdida durante el proceso de agrupación máxima.
 
 El modelo se construye en Keras y TensorFlow, utilizando capas de convolución, capas de agrupación máxima para la reducción de dimensiones, y capas de upsampling para la reconstrucción de la imagen segmentada. Además, aplicamos la técnica de dropout para reducir el sobreajuste.
