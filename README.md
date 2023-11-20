@@ -96,10 +96,36 @@ El modelo U-Net se caracteriza por su arquitectura simétrica, que incluye un ca
 El modelo se construye en Keras y TensorFlow, utilizando capas de convolución, capas de agrupación máxima para la reducción de dimensiones, y capas de upsampling para la reconstrucción de la imagen segmentada. Además, aplicamos la técnica de dropout para reducir el sobreajuste.
 </p>
 
+**Hyperparametros**
+<p align="justify">
+En la construcción de nuestro modelo de red neuronal para la segmentación de imágenes, hemos definido varios parámetros y hiperparámetros clave para optimizar su rendimiento.
+
+- Dimensión de Entrada: La dimensión de entrada es de 128 x 128 x 2, que corresponde a las imágenes FLAIR y T1ce apiladas.
+
+- Capa de Convolución: Utilizamos Conv2D(32, 3, ...), creando así una capa convolucional. Esta capa aprende 32 filtros o kernels, cada uno de tamaño 3×3×2. La función de activación ReLU se aplica después de realizar la convolución para introducir no linealidades en el modelo, permitiendo así aprender patrones más complejos en los datos.
+
+- Capa de Max Pooling: pool = MaxPooling2D(pool_size=(2, 2))(conv1) se utiliza para reducir a la mitad las dimensiones espaciales, disminuyendo así la complejidad computacional y el riesgo de sobreajuste.
+
+- Número de Épocas: El modelo se entrenará durante 35 épocas. Observamos signos de convergencia a partir de la época 30, lo que indica que el modelo comienza a estabilizar su aprendizaje.
+
+- Tamaño del Batch: Hemos ajustado el tamaño del batch a 32. Esto significa que el modelo se actualiza después de procesar 32 ejemplos de entrenamiento. Un tamaño de batch más grande permite una utilización más eficiente del hardware, especialmente en GPUs, al procesar más datos simultáneamente. Además, puede contribuir a una mayor estabilidad en el entrenamiento, ya que el gradiente estimado en cada actualización es más preciso al basarse en más ejemplos. Sin embargo, esto requiere más memoria y puede llevar a una convergencia más lenta, ya que se realizan menos actualizaciones por época en comparación con un tamaño de batch más pequeño.
+
+- Tasa de Aprendizaje: Se establece en 0.001, equilibrando la velocidad de aprendizaje y la precisión en la convergencia hacia los mínimos del error.
+
+- Dropout: Configurado al 20% (0.2), este parámetro ayuda a prevenir el sobreajuste al desactivar aleatoriamente el 20% de las neuronas durante el entrenamiento. Esto asegura que el modelo no se vuelva demasiado dependiente de cualquier característica o patrón particular en los datos de entrenamiento.
+
+Estos parámetros y hiperparámetros están cuidadosamente calibrados para garantizar un entrenamiento eficiente y efectivo del modelo, permitiendo una segmentación precisa de las imágenes médicas.
+</p>
+
 **B - Pérdida**
 
 <p align="justify">
 Para entrenar nuestro modelo, utilizamos la pérdida de entropía cruzada categórica y una serie de métricas personalizadas, incluyendo la precisión, sensibilidad, especificidad y el coeficiente de Dice para diferentes subregiones del tumor. El coeficiente de Dice es una medida estadística que ayuda a evaluar la similitud entre la segmentación predicha y la segmentación real, siendo crucial para validar la eficacia del modelo en tareas de segmentación.
+
+![dice loss](https://wikimedia.org/api/rest_v1/media/math/render/svg/a80a97215e1afc0b222e604af1b2099dc9363d3b)
+con matrices 
+![dice loss](https://www.jeremyjordan.me/content/images/2018/05/intersection-1.png)
+
 </p>
 
 **C - Función de Activación de Salida**
@@ -186,16 +212,19 @@ Ahora estamos listos para entrenar nuestra red neuronal profunda utilizando el m
 </p>
 
 ## **Paso 6 - Predecir Segmentaciones de Tumores**
-
+<p align="justify">
 Utilizaremos el modelo entrenado para realizar predicciones de segmentación en nuevas imágenes.
 
 En este caso usaremos las imagenes del conjunto de test y compararemos con la máscara de segmentación manual.
 
 La función utilizada es `predictByPath()`
+</p>
 
 ## **Paso 7 - Evaluar el Modelo**
+<p align="justify">
 Evaluaremos el rendimiento del modelo en términos de precisión y eficacia en la tarea de segmentación de tumores cerebrales.
 
 Para eso utilizaremos la función `showPredictsById()`
 
 Siga cada paso detenidamente para obtener una comprensión completa del proceso y lograr una implementación exitosa de U-Net en la tarea de segmentación médica. 
+</p>
