@@ -82,7 +82,6 @@ Se realiza una primera visualización de las imágenes y sus máscaras de segmen
 
 ## **Paso 3 - Crear el Modelo || U-Net** 
 
-
 En esta sección, vamos a construir y configurar el modelo U-Net para la segmentación de tumores cerebrales en imágenes de resonancia magnética. U-Net es una arquitectura de red neuronal convolucional diseñada específicamente para tareas de segmentación de imágenes médicas. Su estructura única facilita la captura de contextos locales y globales en las imágenes, lo cual es crucial para la identificación precisa de regiones tumorales.
 
 **A - Definición del Modelo**
@@ -107,15 +106,15 @@ También es importante monitorear el rendimiento del modelo utilizando métricas
 
 Por supuesto, utilizaremos la precisión, que es una medida muy popular. Sin embargo, esta métrica puede ser engañosa cuando se trabaja con conjuntos de datos desequilibrados como BraTS2020, donde la clase de Fondo está sobre representada. Para abordar este problema, utilizaremos otras métricas como la intersección sobre la unión (IoU), el coeficiente de Dice, precisión, sensibilidad y especificidad.
 
-    - Precisión (Accuracy): Mide la proporción general de píxeles clasificados correctamente, incluyendo tanto píxeles positivos como negativos.
+- Precisión (Accuracy): Mide la proporción general de píxeles clasificados correctamente, incluyendo tanto píxeles positivos como negativos.
 
-    - Intersección sobre Unión (IoU): Mide la superposición entre las segmentaciones predichas y las segmentaciones de verdad fundamental.
+- Intersección sobre Unión (IoU): Mide la superposición entre las segmentaciones predichas y las segmentaciones de verdad fundamental.
 
-    - Sensibilidad (Recall o Tasa de Positivos Verdaderos): Mide la proporción de píxeles positivos de verdad fundamental que fueron predichos correctamente como positivos.
+- Sensibilidad (Recall o Tasa de Positivos Verdaderos): Mide la proporción de píxeles positivos de verdad fundamental que fueron predichos correctamente como positivos.
 
-    - Precisión (Valor Predictivo Positivo): Mide la proporción de píxeles positivos predichos que son realmente positivos.
+- Precisión (Valor Predictivo Positivo): Mide la proporción de píxeles positivos predichos que son realmente positivos.
 
-    - Especificidad (Tasa de Negativos Verdaderos): Mide la proporción de píxeles negativos de verdad fundamental que fueron predichos correctamente como negativos.
+- Especificidad (Tasa de Negativos Verdaderos): Mide la proporción de píxeles negativos de verdad fundamental que fueron predichos correctamente como negativos.
 
 **E - Compilación**
 
@@ -140,12 +139,12 @@ Desafortunadamente, nuestras imágenes de modalidades (X) y nuestras segmentacio
 
 Más específicamente, para cada muestra:
 
-    - Recuperamos las rutas de todas sus modalidades (FLAIR, T1CE, T1 y T2), ya que cada una de estas proporciona información única y complementaria sobre la anatomía y el contraste de tejidos del cerebro.
-    - Recuperamos la ruta de la Verdad Fundamental (segmentación original).
-    - Cargamos todas las modalidades y la segmentación.
-    - Creamos un arreglo X que contendrá todas las rebanadas seleccionadas (60-135) de estas modalidades.
-    - Creamos un arreglo y que contendrá todas las rebanadas seleccionadas de la segmentación.
-    - Asignamos a todos los 4 en el arreglo de máscara el valor 3 (para corregir el caso faltante explicado anteriormente).
+- Recuperamos las rutas de todas sus modalidades (FLAIR, T1CE, T1 y T2), ya que cada una de estas proporciona información única y complementaria sobre la anatomía y el contraste de tejidos del cerebro.
+- Recuperamos la ruta de la Verdad Fundamental (segmentación original).
+- Cargamos todas las modalidades y la segmentación.
+- Creamos un arreglo X que contendrá todas las rebanadas seleccionadas (60-135) de estas modalidades.
+- Creamos un arreglo y que contendrá todas las rebanadas seleccionadas de la segmentación.
+- Asignamos a todos los 4 en el arreglo de máscara el valor 3 (para corregir el caso faltante explicado anteriormente).
 
 ## **Paso 5 - Entrenar el Modelo** 
 
