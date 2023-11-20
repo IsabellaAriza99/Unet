@@ -100,7 +100,7 @@ El modelo se construye en Keras y TensorFlow, utilizando capas de convolución, 
 <p align="justify">
 En la construcción de nuestro modelo de red neuronal para la segmentación de imágenes, hemos definido varios parámetros y hiperparámetros clave para optimizar su rendimiento.
 
-- Dimensión de Entrada: La dimensión de entrada es de 128 x 128 x 2, que corresponde a las imágenes FLAIR y T1ce apiladas.
+- Dimensión de Entrada: La dimensión de entrada es de 128 x 128 x 4, que corresponde a las imágenes FLAIR, T1, T1ce ,T2 apiladas.
 
 - Capa de Convolución: Utilizamos Conv2D(32, 3, ...), creando así una capa convolucional. Esta capa aprende 32 filtros o kernels, cada uno de tamaño 3×3×2. La función de activación ReLU se aplica después de realizar la convolución para introducir no linealidades en el modelo, permitiendo así aprender patrones más complejos en los datos.
 
