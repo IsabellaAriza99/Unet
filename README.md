@@ -80,11 +80,14 @@ Si el conjunto de datos que va a utilizar no posee preprocesamiento, debe realiz
 Se realiza una primera visualización de las imágenes y sus máscaras de segmentación, para identificar que si correspondan a la delimitación del tumor por medio de las librerías nilearn, nibabel, matplotlib, así como para la detección de imagenes con componenetes artefactuales que dificulten el entrenamiento del modelo.
 </p>
 
-## **Paso 3 - Crear el Modelo || U-Net** - **FIFI**
+## **Paso 3 - Crear el Modelo || U-Net** 
+
 
 En esta sección, vamos a construir y configurar el modelo U-Net para la segmentación de tumores cerebrales en imágenes de resonancia magnética. U-Net es una arquitectura de red neuronal convolucional diseñada específicamente para tareas de segmentación de imágenes médicas. Su estructura única facilita la captura de contextos locales y globales en las imágenes, lo cual es crucial para la identificación precisa de regiones tumorales.
 
 **A - Definición del Modelo**
+
+![Alt text](<unet_model.png>)
 
 El modelo U-Net se caracteriza por su arquitectura simétrica, que incluye un camino de contracción (codificador) y un camino de expansión (decodificador), permitiendo una segmentación precisa a nivel de píxel. La conexión de salto entre el codificador y el decodificador ayuda a recuperar la información espacial perdida durante el proceso de agrupación máxima.
 
@@ -146,7 +149,7 @@ Más específicamente, para cada muestra:
     - Creamos un arreglo y que contendrá todas las rebanadas seleccionadas de la segmentación.
     - Asignamos a todos los 4 en el arreglo de máscara el valor 3 (para corregir el caso faltante explicado anteriormente).
 
-## **Paso 5 - Entrenar el Modelo** - **FIFI**
+## **Paso 5 - Entrenar el Modelo** 
 
 **A - Callbacks**
 Claro, aquí tienes un párrafo sobre los callbacks inspirado en tu código y explicación:
